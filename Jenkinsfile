@@ -9,6 +9,12 @@ pipeline {
     stage('test') {
       steps {
         sh 'cat abc'
+        echo 'hi'
+        sleep 1
+        node(label: 'abc') {
+          echo 'done'
+        }
+
       }
     }
   }
